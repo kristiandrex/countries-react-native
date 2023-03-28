@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { ICountry } from "~/types";
 
@@ -7,7 +8,7 @@ type CountryListItemProps = {
   country: ICountry;
 };
 
-export default function CountryListItem({ country }: CountryListItemProps) {
+function CountryListItem({ country }: CountryListItemProps) {
   const attributes = {
     Population: numberFormatter.format(country.population),
     Region: country.region,
@@ -35,6 +36,12 @@ export default function CountryListItem({ country }: CountryListItemProps) {
     </View>
   );
 }
+
+const CountryListItemMemo = memo(CountryListItem, (prevProps, nextProps) => {
+  return prevProps.country.name.common === nextProps.country.name.common;
+});
+
+export default CountryListItemMemo;
 
 const styles = StyleSheet.create({
   countryListItem: {

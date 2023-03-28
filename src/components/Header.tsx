@@ -7,6 +7,8 @@ export default function Header() {
         backgroundColor: "#fff",
         paddingHorizontal: 16,
         paddingVertical: 32,
+        borderTopWidth: 2,
+        borderTopColor: "#fafafa",
       }}
     >
       <Text style={{ fontFamily: "NunitoSans-ExtraBold" }}>
