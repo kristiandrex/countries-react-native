@@ -1,10 +1,10 @@
 module.exports = {
   settings: {
     react: {
-      version: "detect",
+      version: 'detect',
     },
-    "import/ignore": ["react-native"],
-    "import/resolver": {
+    'import/ignore': ['react-native'],
+    'import/resolver': {
       typescript: true,
       node: true,
     },
@@ -15,46 +15,48 @@ module.exports = {
     node: true,
   },
   extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:import/recommended",
-    "plugin:import/typescript",
-    "prettier",
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
+    'prettier',
   ],
   overrides: [
     {
       env: {
         node: true,
       },
-      files: [".eslintrc.{js,cjs}"],
+      files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
-        sourceType: "script",
+        sourceType: 'script',
       },
     },
   ],
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
-  plugins: ["@typescript-eslint", "react"],
+  plugins: ['@typescript-eslint', 'react'],
   rules: {
-    indent: ["error", 2],
-    quotes: ["error", "double"],
-    semi: ["error", "always"],
-    "react/react-in-jsx-scope": "off",
-    "import/no-unresolved": "off",
-    "import/order": [
-      "error",
+    'react/react-in-jsx-scope': 'off',
+    'import/no-unresolved': 'off',
+    'import/order': [
+      'error',
       {
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
         pathGroups: [
           {
-            pattern: "~/**",
-            group: "internal",
+            pattern: '~/**',
+            group: 'internal',
           },
         ],
+        'newlines-between': 'always',
       },
     ],
   },
